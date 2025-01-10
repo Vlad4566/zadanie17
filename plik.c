@@ -1,23 +1,24 @@
-
 #include <stdio.h>
+#include <math.h>
 
-float volume_cuboid(float x , float y , float h) {
-  return(x*y*h);
+double calculateSphereVolume(double radius) {
+    return (4.0 / 3.0) * M_PI * pow(radius, 3);
 }
 
-int main () {
-    float x, y, h;
 
-    printf("Podaj dlugosc podstawy prostopadloscianu: ");
-    scanf("%f",&x);
+int main() {
+    double radius;
 
-    printf("Podaj szerokosc podstawy prostopadloscianu: ");
-    scanf("%f",&y);
 
-    printf("Podaj wysokosc podstawy prostopadloscianu: ");
-    scanf("%f",&h);
 
-    printf("Objectnosc prostopadloscianu: %f\n", volume_cuboid(x, y, h));
+    printf("Enter the radius of the sphere: ");
+    scanf("%lf", &radius);
 
-    return(0);
-    }
+    double volume = calculateSphereVolume(radius);
+    printf("Volume of the sphere: %.2f\n", volume);
+
+    return 0;
+    
+}
+
+
